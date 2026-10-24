@@ -1,0 +1,32 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![hexlet-check](https://github.com/Alexhexlet1996/fullstack-javascript-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Alexhexlet1996/fullstack-javascript-project-46/actions)",
+  "homepage": "https://github.com/Alexhexlet1996/fullstack-javascript-project-46#readme",
+  "bugs": {
+    "url": "https://github.com/Alexhexlet1996/fullstack-javascript-project-46/issues"
+  },
+  "bin": {
+      "genDiff": "bin/genDiff.js"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/Alexhexlet1996/fullstack-javascript-project-46.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "bin/genDiff.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "lodash": "^4.18.1"
+  }
+}
