@@ -7,7 +7,7 @@
     "url": "https://github.com/Alexhexlet1996/fullstack-javascript-project-46/issues"
   },
   "bin": {
-      "genDiff": "bin/genDiff.js"
+    "genDiff": "bin/genDiff.js"
   },
   "repository": {
     "type": "module",
@@ -18,9 +18,14 @@
   "type": "module",
   "main": "bin/genDiff.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "oxlint && oxfmt --check",
+    "lint:fix": "oxfmt && oxlint --fix"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.5",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.88.0",
     "vitest": "^5.0.5"
