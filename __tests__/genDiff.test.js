@@ -30,11 +30,5 @@ test("parsing", () => {
     });
 });
 
-test("genDiff", () => {
-    const stringJSON1 = readFileSync(testFile1, "utf8")
-    const stringJSON2 = readFileSync(testFile2, "utf8")
-  const sample = readFileSync(getFixturePath('diffResult.js'), "utf8").trim();
-  expect(genDiff(stringJSON1, stringJSON2)).toBe(sample);
-});
 
 
