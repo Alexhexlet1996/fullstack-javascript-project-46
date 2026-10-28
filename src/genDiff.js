@@ -3,7 +3,7 @@ import { parsing } from "./parsing.js";
 
 export default (stringFile1, stringFile2) => {
   const { file1, file2 } = parsing(stringFile1, stringFile2);
-  
+
   const keysFile1 = Object.keys(file1);
   const keysFile2 = Object.keys(file2);
   const common = _.intersection(keysFile1, keysFile2);

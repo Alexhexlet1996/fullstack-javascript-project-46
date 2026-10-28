@@ -1,5 +1,5 @@
 import path from "node:path";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
 const getFixturePath = (nameFile) => {
   const __filename = fileURLToPath(import.meta.url);
