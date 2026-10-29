@@ -1,8 +1,8 @@
 import _ from "lodash";
 import { parsing } from "./parsing.js";
 
-export default (stringFile1, stringFile2) => {
-  const { file1, file2 } = parsing(stringFile1, stringFile2);
+export default (pathFile1, pathFile2) => {
+  const { file1, file2 } = parsing(pathFile1, pathFile2);
 
   const keysFile1 = Object.keys(file1);
   const keysFile2 = Object.keys(file2);

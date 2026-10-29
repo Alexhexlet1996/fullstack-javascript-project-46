@@ -4,8 +4,11 @@ import { getFixturePath } from "../src/getFixturePath.js";
 import { readFileSync } from "node:fs";
 
 test("genDiff", () => {
-  const stringJSON1 = readFileSync(getFixturePath("file1.json"), "utf8");
-  const stringJSON2 = readFileSync(getFixturePath("file2.json"), "utf8");
+  const pathJSON1 = getFixturePath("file1.json");
+  const pathJSON2 = getFixturePath("file2.json");
+  const pathYML1 = getFixturePath("file1.yml");
+  const pathYML2 = getFixturePath("file2.yml");
   const sample = readFileSync(getFixturePath("diffResult.txt"), "utf8").trim();
-  expect(genDiff(stringJSON1, stringJSON2)).toBe(sample);
+  expect(genDiff(pathJSON1, pathJSON2)).toBe(sample);
+  expect(genDiff(pathYML1, pathYML2)).toBe(sample);
 });
