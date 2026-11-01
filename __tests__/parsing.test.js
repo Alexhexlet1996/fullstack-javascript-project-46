@@ -7,7 +7,7 @@ test("parsing", () => {
   const pathJSON2 = getFixturePath("file2.json");
   const pathYML1 = getFixturePath("file1.yml");
   const pathYML2 = getFixturePath("file2.yml");
-  expect(parsing(athJSON1, pathJSON2)).toEqual({
+  expect(parsing(pathJSON1, pathJSON2)).toEqual({
     file1: {
       host: "hexlet.io",
       timeout: 50,
