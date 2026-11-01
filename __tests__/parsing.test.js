@@ -1,13 +1,9 @@
 import { test, expect } from "vitest";
-import { parsing } from "../src/parsing.js";
-import { getFixturePath } from "../src/getFixturePath.js";
+import { parsing } from "../src/parsers.js";
+import { obj } from "../__fixtures__/parsingTest.js";
 
 test("parsing", () => {
-  const pathJSON1 = getFixturePath("file1.json");
-  const pathJSON2 = getFixturePath("file2.json");
-  const pathYML1 = getFixturePath("file1.yml");
-  const pathYML2 = getFixturePath("file2.yml");
-  expect(parsing(pathJSON1, pathJSON2)).toEqual({
+  expect(parsing(obj.pathJSON1, obj.pathJSON2)).toEqual({
     file1: {
       host: "hexlet.io",
       timeout: 50,
@@ -20,7 +16,7 @@ test("parsing", () => {
       host: "hexlet.io",
     },
   });
-  expect(parsing(pathYML1, pathYML2)).toEqual({
+  expect(parsing(obj.pathYML1, obj.pathYML2)).toEqual({
     file1: {
       host: "hexlet.io",
       timeout: 50,
@@ -31,6 +27,65 @@ test("parsing", () => {
       timeout: 20,
       verbose: true,
       host: "hexlet.io",
+    },
+  });
+  expect(parsing(obj.pathNestedFile1, obj.pathNestedFile2)).toEqual({
+    file1: {
+      common: {
+        setting1: "Value 1",
+        setting2: 200,
+        setting3: true,
+        setting6: {
+          key: "value",
+          doge: {
+            wow: "",
+          },
+        },
+      },
+      group1: {
+        baz: "bas",
+        foo: "bar",
+        nest: {
+          key: "value",
+        },
+      },
+      group2: {
+        abc: 12345,
+        deep: {
+          id: 45,
+        },
+      },
+    },
+    file2: {
+      common: {
+        follow: false,
+        setting1: "Value 1",
+        setting3: null,
+        setting4: "blah blah",
+        setting5: {
+          key5: "value5",
+        },
+        setting6: {
+          key: "value",
+          ops: "vops",
+          doge: {
+            wow: "so much",
+          },
+        },
+      },
+      group1: {
+        foo: "bar",
+        baz: "bars",
+        nest: "str",
+      },
+      group3: {
+        deep: {
+          id: {
+            number: 45,
+          },
+        },
+        fee: 100500,
+      },
     },
   });
 });
