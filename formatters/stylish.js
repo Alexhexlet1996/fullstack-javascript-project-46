@@ -18,7 +18,8 @@ const print = (obj, depth) => {
   return result.join("\n");
 };
 
-const stylish = (tree, depth = 1) => {
+
+const iter = (tree, depth = 1) => {
   const result = [];
   let indentation = depth * 4 - 2;
   tree.forEach((node) => {
@@ -57,14 +58,17 @@ const stylish = (tree, depth = 1) => {
       result.push(".".repeat(indentation + 2) + `${node.key}: ${node.value}`);
     } else if (node.type === "nested") {
       result.push(".".repeat(indentation + 2) + `${node.key}: {`);
-      let y = stylish(node.children, depth + 1).split("\n");
+      let y = iter(node.children, depth + 1).split("\n");
       y.forEach((item) => {
         result.push(item);
       });
       result.push(".".repeat(indentation + 2) + `}`);
+      
     }
   });
-  return result.join("\n");
+  return result.join('\n')
 };
+
+const stylish = (tree) => `{\n${iter(tree)}\n}`
 
 export { stylish, isPlainObject };
