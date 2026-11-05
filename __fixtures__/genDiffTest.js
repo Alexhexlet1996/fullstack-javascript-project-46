@@ -11,10 +11,9 @@ const obj = {
   recursYML1: getFixturePath("nestedFile1.yml"),
   recursYML2: getFixturePath("nestedFile2.yml"),
   sample: readFileSync(getFixturePath("diffResult.txt"), "utf8").trim(),
-  sampleRecurs: readFileSync(
-    getFixturePath("diffRecursResult.txt"),
-    "utf8",
-  ).trim(),
+  stylish: readFileSync(getFixturePath("stylish.txt"), "utf8").trim(),
+  plain: readFileSync(getFixturePath("plain.txt"), "utf8").trim(),
+  json: readFileSync(getFixturePath("JSON.txt"), "utf8").trim(),
 };
 
 export { obj };

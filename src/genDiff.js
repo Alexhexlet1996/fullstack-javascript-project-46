@@ -1,13 +1,13 @@
 import _ from "lodash";
 import { parsing } from "./parsers.js";
-import { stylish, isPlainObject } from "../formatters/stylish.js";
-import { plain } from "../formatters/plain.js"
+import { isPlainObject } from "../formatters/stylish.js";
+import { choiceFormat } from "../formatters/index.js";
 
-export default (pathFile1, pathFile2, formatterFn) => {
+export default (pathFile1, pathFile2, format = "stylish") => {
   const { file1, file2 } = parsing(pathFile1, pathFile2);
-  let resultDif = dif(file1, file2);  
-  let resultFormat = formatterFn(resultDif)
-  return resultFormat
+  let resultDif = dif(file1, file2);
+  let resultFormat = choiceFormat(format);
+  return resultFormat(resultDif);
 };
 
 const dif = (file1, file2) => {
