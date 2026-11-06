@@ -1,11 +1,11 @@
 import { Command } from "commander";
 import path from "node:path";
-import genDiff from "./genDiff.js";
+import genDiff from "./gendiff.js";
 
 const program = new Command();
 
 program
-  .name("genDiff")
+  .name("gendiff")
   .argument("filepath1")
   .argument("filepath2")
   .description("Compares two configuration files and shows a difference.")

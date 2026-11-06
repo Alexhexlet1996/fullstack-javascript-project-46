@@ -7,7 +7,7 @@
     "url": "https://github.com/Alexhexlet1996/fullstack-javascript-project-46/issues"
   },
   "bin": {
-    "genDiff": "bin/genDiff.js"
+    "gendiff": "bin/gendiff.js"
   },
   "repository": {
     "type": "module",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "bin/genDiff.js",
+  "main": "bin/gendiff.js",
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
