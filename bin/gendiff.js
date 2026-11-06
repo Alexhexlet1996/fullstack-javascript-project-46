@@ -2,5 +2,5 @@
 
 import gendiff from './cli.js'
 
-gendiff()
-program.parse(process.argv)
+const program = gendiff();
+program.parse(process.argv);
