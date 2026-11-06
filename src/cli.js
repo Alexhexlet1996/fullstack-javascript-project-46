@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import path from "node:path";
-import genDiff from "./gendiff.js";
+import gendiff from "./gendiff.js";
 
 const program = new Command();
 
@@ -26,7 +26,7 @@ program
   }
     let pathFile1 = path.resolve(process.cwd(), filepath1);
     let pathFile2 = path.resolve(process.cwd(), filepath2);
-    console.log(genDiff(pathFile1, pathFile2, options.format));
+    console.log(gendiff(pathFile1, pathFile2, options.format));
   });
 
 export default () => program.parse();

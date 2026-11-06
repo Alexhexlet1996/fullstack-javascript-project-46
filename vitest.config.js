@@ -13,7 +13,7 @@ export default defineConfig({
       exclude: [
         ...coverageConfigDefaults.exclude,
         "**/__fixtures__/**",
-        "bin/genDiff.ts",
+        "bin/gendiff.ts",
       ],
     },
   },
