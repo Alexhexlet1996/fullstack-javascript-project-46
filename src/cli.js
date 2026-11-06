@@ -12,12 +12,12 @@ program
   .version("1.0.0")
   .option("-f, --format [type]", "output format", "stylish")
   .action((filepath1, filepath2, options) => {
-    let pathFile1 = path.resolve(process.cwd(), filepath1);
-    let pathFile2 = path.resolve(process.cwd(), filepath2);
-     if (!filepath1 || !filepath2) {
+    if (!filepath1 || !filepath2) {
     program.help(); 
     return;
   }
+    let pathFile1 = path.resolve(process.cwd(), filepath1);
+    let pathFile2 = path.resolve(process.cwd(), filepath2);
     console.log(genDiff(pathFile1, pathFile2, options.format));
   });
 
