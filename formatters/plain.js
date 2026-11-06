@@ -22,7 +22,7 @@ const iter = (tree, key = "") => {
 
 const plain = (tree) => iter(tree).trimEnd();
 
-function formatValue(value) {
+function formatValue(value = '') {
   const exceptions = [false, true, null];
   if (exceptions.includes(value || typeof value === 'number')) {
     return `${value}`;
