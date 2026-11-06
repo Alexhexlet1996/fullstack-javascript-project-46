@@ -5,11 +5,11 @@ const isPlainObject = (val) => {
 const construction = (node, depth, indentation, sign = " ") => {
   let result = [];
   if (isPlainObject(node.value)) {
-    result.push(".".repeat(indentation) + `${sign} ${node.key}: {`);
+    result.push(" ".repeat(indentation) + `${sign} ${node.key}: {`);
     result.push(print(node.value, depth + 1));
-    result.push(".".repeat(indentation + 2) + `}`);
+    result.push(" ".repeat(indentation + 2) + `}`);
   } else {
-    result.push(".".repeat(indentation) + `${sign} ${node.key}: ${node.value}`);
+    result.push(" ".repeat(indentation) + `${sign} ${node.key}: ${node.value}`);
   }
   return result.join("\n");
 };
@@ -20,11 +20,11 @@ const print = (obj, depth) => {
   const keys = Object.keys(obj);
   keys.forEach((key) => {
     if (isPlainObject(obj[key])) {
-      result.push(".".repeat(moreDepth) + `${key}: {`);
+      result.push(" ".repeat(moreDepth) + `${key}: {`);
       result.push(print(obj[key], depth + 1));
-      result.push(".".repeat(moreDepth) + `}`);
+      result.push(" ".repeat(moreDepth) + `}`);
     } else {
-      result.push(".".repeat(moreDepth) + `${key}: ${obj[key]}`);
+      result.push(" ".repeat(moreDepth) + `${key}: ${obj[key]}`);
     }
   });
   return result.join("\n");
@@ -48,12 +48,12 @@ const iter = (tree, depth = 1) => {
     } else if (node.type === "unchanged") {
       result.push(construction(node, depth, indentation));
     } else if (node.type === "nested") {
-      result.push(".".repeat(indentation + 2) + `${node.key}: {`);
+      result.push(" ".repeat(indentation + 2) + `${node.key}: {`);
       let y = iter(node.children, depth + 1).split("\n");
       y.forEach((item) => {
         result.push(item);
       });
-      result.push(".".repeat(indentation + 2) + `}`);
+      result.push(" ".repeat(indentation + 2) + `}`);
     }
   });
   return result.join("\n");
