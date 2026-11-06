@@ -1,15 +1,16 @@
-#!/usr/bin/env node
 
 import { Command } from "commander";
 import path from "node:path";
 import gendiff from "../src/gendiff.js";
 
-const program = new Command
+
+export default () => {
+const program = new Command()
 
 program
   .name("gendiff")
-  .argument("filepath1")
-  .argument("filepath2")
+  .argument("<filepath1>")
+  .argument("<filepath2>")
   .description("Compares two configuration files and shows a difference.")
   .version("1.0.0")
   .option("-f, --format [type]", "output format", "stylish")
@@ -19,4 +20,5 @@ program
     console.log(gendiff(pathFile1, pathFile2, options.format));
   });
 
-program.parse(process.argv)
+ return program
+}
