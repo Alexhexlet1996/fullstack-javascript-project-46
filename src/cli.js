@@ -4,6 +4,14 @@ import genDiff from "./gendiff.js";
 
 const program = new Command();
 
+const originalExit = process.exit;
+process.exit = (code) => {
+  if (code === 0) {
+    return; 
+  }
+  originalExit(code);
+};
+
 program
   .name("gendiff")
   .argument("[filepath1]")
