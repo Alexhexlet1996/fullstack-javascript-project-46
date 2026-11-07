@@ -1,1 +1,1 @@
-[Сравнение двух плоских JSON, YML файлов](https://asciinema.org/connect/0305085a-efd0-46ac-b2e3-91d5799360e2)
+[Сравнение двух плоских JSON, YML файлов](https://asciinema.org/a/kGYJih1GDdy1D2gG)
