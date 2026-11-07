@@ -10,7 +10,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/Alexhexlet1996/fullstack-javascript-project-46.git"
   },
   "license": "ISC",

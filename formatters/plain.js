@@ -24,7 +24,7 @@ const plain = (tree) => iter(tree).trimEnd();
 
 function formatValue(value) {
   const exceptions = [false, true, null];
-  if (exceptions.includes(value) || typeof value === 'number') {
+  if (exceptions.includes(value) || typeof value === "number") {
     return `${value}`;
   } else {
     return isPlainObject(value) ? "[complex value]" : `'${value}'`;
