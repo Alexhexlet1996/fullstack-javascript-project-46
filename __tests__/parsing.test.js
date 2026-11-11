@@ -1,9 +1,8 @@
 import { test, expect } from "vitest";
 import { parsing } from "../src/parsers.js";
-import { obj } from "../__fixtures__/parsingTest.js";
+import { parametersJSON, parametersYML } from "../__fixtures__/parsingTest.js";
 
-test("parsing", () => {
-  expect(parsing(obj.pathNestedFile1, obj.pathNestedFile2)).toEqual({
+const expected = {
     file1: {
       common: {
         setting1: "Value 1",
@@ -61,5 +60,10 @@ test("parsing", () => {
         fee: 100500,
       },
     },
-  });
+  }
+
+
+test("parsing", () => {
+  expect(parsing(parametersJSON)).toEqual(expected);
+  expect(parsing(parametersYML)).toEqual(expected)
 });

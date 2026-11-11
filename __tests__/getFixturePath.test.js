@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { getFixturePath } from "../src/getFixturePath.js";
+import { getFixturePath } from "./getFixturePath.js";
 
 test("getFixturePath", () => {
   expect(getFixturePath("nestedFile1.json")).toBe(
