@@ -2,8 +2,14 @@ import _ from "lodash";
 import { parsing } from "./parsers.js";
 import { isPlainObject } from "./formatters/stylish.js";
 import { choiceFormat } from "./formatters/index.js";
+import { readFileSync } from "node:fs";
 
-export default (parameters, format = "stylish") => {
+export default (pathFile1, pathFile2, format = "stylish") => {
+  let parameters = {
+    extension: pathFile1.split(".").pop(),
+    readFile1: readFileSync(pathFile1, "utf8"),
+    readFile2: readFileSync(pathFile2, "utf8")
+  }
   const { file1, file2 } = parsing(parameters);
   let resultDif = dif(file1, file2);
   let resultFormat = choiceFormat(format);

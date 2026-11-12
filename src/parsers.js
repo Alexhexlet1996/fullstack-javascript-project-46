@@ -1,6 +1,4 @@
 import { load } from "js-yaml";
-import { readFileSync } from "node:fs";
-
 
 
 const parsing = (parameters) => {
