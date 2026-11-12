@@ -1,6 +1,5 @@
 import { load } from "js-yaml";
 
-
 const parsing = (parameters) => {
   if (parameters.extension === "yml" || parameters.extension === "yaml") {
     let file1 = load(parameters.readFile1);
@@ -15,5 +14,3 @@ const parsing = (parameters) => {
 };
 
 export { parsing };
-
-

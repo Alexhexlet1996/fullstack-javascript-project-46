@@ -29,7 +29,6 @@ const iter = (tree, depth = 1) => {
 
 const stylish = (tree) => `{\n${iter(tree)}\n}`;
 
-
 const objType = {
   removed: (node, depth) => [construction(node, depth, "-")],
   added: (node, depth) => [construction(node, depth, "+")],

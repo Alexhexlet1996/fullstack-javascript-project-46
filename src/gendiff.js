@@ -8,8 +8,8 @@ export default (pathFile1, pathFile2, format = "stylish") => {
   let parameters = {
     extension: pathFile1.split(".").pop(),
     readFile1: readFileSync(pathFile1, "utf8"),
-    readFile2: readFileSync(pathFile2, "utf8")
-  }
+    readFile2: readFileSync(pathFile2, "utf8"),
+  };
   const { file1, file2 } = parsing(parameters);
   let resultDif = dif(file1, file2);
   let resultFormat = choiceFormat(format);
@@ -17,7 +17,6 @@ export default (pathFile1, pathFile2, format = "stylish") => {
 };
 
 const dif = (file1, file2) => {
-  
   const keysFile1 = Object.keys(file1);
   const keysFile2 = Object.keys(file2);
 
@@ -39,7 +38,7 @@ const dif = (file1, file2) => {
         children: dif(file1[key], file2[key]),
       };
     } else if (file1[key] !== file2[key]) {
-      return{
+      return {
         type: "changed",
         key: key,
         value1: file1[key],

@@ -10,9 +10,9 @@ const makeParameters = (name1, name2) => {
     readFile1: readFileSync(pathFile1, "utf8"),
     readFile2: readFileSync(pathFile2, "utf8"),
   };
-}
+};
 
 const parametersJSON = makeParameters("nestedFile1.json", "nestedFile2.json");
-const parametersYML = makeParameters("nestedFile1.yml", "nestedFile2.yml")
+const parametersYML = makeParameters("nestedFile1.yml", "nestedFile2.yml");
 
 export { parametersJSON, parametersYML };

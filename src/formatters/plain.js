@@ -2,12 +2,12 @@ import { isPlainObject } from "./stylish.js";
 
 const iter = (tree, key = "") => {
   let result = tree
-  .filter((item) => item.type !== "unchanged")
-  .flatMap((item) => {
-    let string = key === "" ? `${item.key}` : `${key}.${item.key}`;
-    return generator[item.type](string, item)
-  });
-  return result.join('\n');
+    .filter((item) => item.type !== "unchanged")
+    .flatMap((item) => {
+      let string = key === "" ? `${item.key}` : `${key}.${item.key}`;
+      return generator[item.type](string, item);
+    });
+  return result.join("\n");
 };
 
 const plain = (tree) => iter(tree).trimEnd();
@@ -33,11 +33,9 @@ const generator = {
     return `Property '${string}' was removed`;
   },
   nested: function (string, item) {
-    const children = item.children
-    return iter(children, string)
-  }
+    const children = item.children;
+    return iter(children, string);
+  },
 };
 
 export { plain };
-
-
